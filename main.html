@@ -44,15 +44,6 @@
                 <span class="navbar-toggler-awesome fas fa-times"></span>
             </button>
             <!-- end of mobile menu toggle button -->
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#description">DESCRIPTION <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
@@ -83,7 +74,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">₹</div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Amount">
+                        <input type="number" class="form-control" id="amountInput" placeholder="Amount">
                     </div>
 
                     <button type="submit" class="btn btn-primary mb-2">Submit</button>
@@ -108,18 +99,19 @@
     </header> <!-- end of header -->
     <!-- end of header -->
     <div class="card">
-        <div class="card-header">
+        <div class="card-header" id="selectOption">
             💵 Cash
         </div>
         <div class="card-body">
-            <h6 class="card-title">Amount ₹ 5000/-</h6>
-            <p class="card-text">For car reparing and manitenance</p>
+            <h6 class="card-title" id="Amount">Amount ₹ 5000/-</h6>
+            <p class="card-text" id="description">For car reparing and manitenance</p>
         </div>
     </div>
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="./expense-blooger.js"></script> <!-- Expense scripts -->
 </body>
 
 </html>
