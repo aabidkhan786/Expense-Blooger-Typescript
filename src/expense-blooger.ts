@@ -1,28 +1,30 @@
-import { FormatType } from './formatType'
-
-class Expense implements FormatType {
-    amount: string;
-    description: string;
-    option: string;
-
-    constructor(a: string, b: string, c: string) {
-        this.amount = a;
-        this.description = b;
-        this.option = c;
-    }
-    get() {
-        return `${this.amount} | ${this.description} | ${this.option}`
-    }
-}
-
-const form = document.querySelector('.form-inline') as HTMLFormElement;
-const OptionSelect = document.querySelector("#inlineFormCustomSelectPref") as HTMLSelectElement;
-const Description = document.querySelector("#inlineFormInputName2") as HTMLInputElement;
+const OptionSelect = document.querySelector("#inlineOption") as HTMLSelectElement;
+const Description = document.querySelector("#inlineDescription") as HTMLInputElement;
 const Amount = document.querySelector("#amountInput") as HTMLInputElement;
+const form = document.querySelector('.form-inline') as HTMLFormElement;
+let addExpense = (e: any) => {
 
-form.addEventListener('submit', (e: Event) => {
-    // This will prevent the page from reloading
+    // this will prevent the page from loading
     e.preventDefault();
-})
 
+    // console.log(`You have spent ${Amount.value} through ${OptionSelect.value} for : ${Description.value}`);
 
+    var card = document.querySelector("#card") as HTMLBodyElement;
+    var optionElement = document.createElement('div');
+    var cardElement = document.createElement('div');
+    var amountElement = document.createElement('h6');
+    var descriptionElement = document.createElement('p');
+    cardElement.appendChild(amountElement);
+    cardElement.appendChild(descriptionElement);
+    card.appendChild(optionElement);
+    card.appendChild(cardElement);
+
+    optionElement.innerHTML = `Through ${OptionSelect.value}`;
+    optionElement.classList.add("card-header");
+    amountElement.innerHTML = `Amount ₹ ${Amount.value}/-`;
+    amountElement.classList.add("card-title");
+    descriptionElement.innerHTML = Description.value;
+    descriptionElement.classList.add("card-text");
+    cardElement.classList.add("card-body");
+}
+form.addEventListener('submit', addExpense, false);
