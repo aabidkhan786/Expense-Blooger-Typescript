@@ -9,7 +9,8 @@ let addExpense = (e: any) => {
 
     // console.log(`You have spent ${Amount.value} through ${OptionSelect.value} for : ${Description.value}`);
 
-    var card = document.querySelector("#card") as HTMLBodyElement;
+    var cardInside = document.querySelector("#cardInside") as HTMLBodyElement;
+    var card = document.createElement('div');
     var optionElement = document.createElement('div');
     var cardElement = document.createElement('div');
     var amountElement = document.createElement('h6');
@@ -26,5 +27,7 @@ let addExpense = (e: any) => {
     descriptionElement.innerHTML = Description.value;
     descriptionElement.classList.add("card-text");
     cardElement.classList.add("card-body");
+    card.classList.add("card");
+    cardInside.appendChild(card);
 }
 form.addEventListener('submit', addExpense, false);
