@@ -1,16 +1,15 @@
 {
-    "compilerOptions":{
-        "module": "commonjs",
-        "removeComments":true,
-        "sourceMap": true,
-        "rootDir": "./src",
-        "outDir": "./js"
-    },
-    "files":[
-        "./js/bootstrap.min.js",
-        "./js/expense-blooger.js",
-        "./js/formatType.js",
-        "./js/jquery.min.js",
-        "./js/scripts.js"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2016",
+    "rootDir": "./src",
+    "outDir": "./js",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
